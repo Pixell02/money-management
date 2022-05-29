@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+    <link rel="stylesheet" href="style.css">
+    </script>
+</head>
+<body id="body">
+    
+    <h1 id="tyt"></h1>
+    <div id="data">
+      <form action="#" method="get">
+      <section><text class="text">balance</text>          <input type="number" class="in" id="balance" value="0"></section><br>
+      <div id="mes_bal" class="alert"></div>
+      <section><text class="text">money in trade</text>   <input type="number" class="in" id="money_in_trade" value="0"></section><br>
+      <div id="mes_mit" class="alert"></div>
+      <section><text class="text">Number of trades</text> <input type="number" class="in" id="Num" value="0"></section><br>
+      <div id="mes_not" class="alert"></div>
+      <section><text class="text">Win rate</text>         <input type="number" class="in" id="Wr" value="0">%</section><br>
+      <div id="mes_wr" class="alert"></div>
+      <section><text class="text">Risk reward</text>      <input type="number" class="in" id="loss" value="0"> %: <input type="number" class="in" id="profit" value="0">% Loss/Profit</section><br>
+      <div id="mes_loss" class="alert"></div>             <div id="mes_profit" class="alert"></div>
+
+      <input type="submit" id="simulate" value="simulate"  onclick="trade()">
+    </form>
+    </div>
+    
+    <div id="tab"></div>
+    
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

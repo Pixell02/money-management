@@ -1,0 +1,35 @@
+body
+{
+    background-color: rgb(37, 35, 35);
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th, td{
+    padding: 10px 20px;
+    border: 1px solid #000;
+}
+.alert
+{
+    margin-top: -40px;
+    margin-bottom: 20px;
+    margin-left: 170px;
+    color: red;
+}
+.text
+{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+#simulate
+{
+    margin-left:150px;
+}
+#mes_profit
+{
+    margin-left: 390px;
+    margin-top: -45px;
+}
