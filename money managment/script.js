@@ -17,8 +17,8 @@ function trade(){
     let money = parseInt(document.getElementById('money_in_trade').value);
     let balance = parseInt(document.getElementById('balance').value);
     let win_rate = parseInt(document.getElementById('Wr').value);
-    let loss = parseInt(document.getElementById('loss').value);
-    let Profit = document.getElementById('profit').value/100;
+    let loss = parseFloat(document.getElementById('loss').value/100);
+    let Profit = parseFloat(document.getElementById('profit').value/100);
     console.log(Profit);
     
     console.log(balance);
@@ -158,12 +158,7 @@ function trade(){
     if (bal==true && nt==true && mon==true && wuer==true && los==true && prof==true)
     
    {
-        
-       
-        
-        
-        
-        
+                
         let table = document.createElement('table');
         table.className="new-table";
         let thead = document.createElement('thead');
@@ -192,23 +187,42 @@ function trade(){
 
     for(let i = 1 ; i <= number_trade ; i++)
     {
-        //Profit    
-            let PT =  money * Profit;
-            console.log(PT);
-            PT= PT + balance;
-            console.log(PT);
-
         let rows = document.createElement('tr');
         let data_1 = document.createElement('td');
         data_1.innerHTML = i;
-        
+        // Probability
+
+        let random = Math.floor(Math.random()*100+1);
         let data_3 = document.createElement('td');
-        data_3.innerHTML = PT;
+        if(random<=win_rate)
+        {
+          //Profit
+            
+            data_3.style.backgroundColor="green";    
+            let PT =  money * Profit;
+            console.log(PT);
+            PT= PT + balance;
+            balance=PT;
+            console.log(PT); 
+            
+            data_3.innerHTML = balance; 
+        }
+        else
+        {
+            
+            data_3.style.backgroundColor="red";
+            let SL = money * loss;
+            SL = balance - SL;
+            balance = SL;
+            data_3.innerHTML = balance;
+        }
+    
+        
         rows.appendChild(data_1);
         
         rows.appendChild(data_3);
         tbody.appendChild(rows);
-        balance=PT;
+        
     }
 
     tabe[0].remove();
